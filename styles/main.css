@@ -35,7 +35,7 @@ posicionanebto, alinhamentos
 */
 
 #page-home {
-    height: 70vw;
+    height: 120vh;
     background: url('../assets/home-background.svg') no-repeat;
     background-position: 35vw bottom;
 }
@@ -133,6 +133,7 @@ posicionanebto, alinhamentos
 @media screen and (max-width:900px){
     #page-home{
         background-position: 70vw;
+        height: 100vh;
     }
     #page-home .content{
         align-items: center;
