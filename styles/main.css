@@ -1,3 +1,69 @@
-html{
-    font-family:'Roboto', sans-serif
+:root {
+    /*elemento raiz onde eu posso criar variaveis para repetir propriedades*/
+    --title-color: #322153;
+}
+
+html {
+    font-family: 'Roboto', sans-serif
+}
+
+body {
+    background: #f0f0f5;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BOX MODEL
+modelo de caixa
+Toda caixa tem 
+largura, altura, espaçamentos
+bordas, cor, fundo, maneira que é vista pelo html(display)
+posicionanebto, alinhamentos
+*/
+
+#page-home {
+    height: 150vw;
+    background: url('../assets/home-background.svg') no-repeat;
+    background-position: 35vw bottom;
+}
+
+#page-home .content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-home header {
+    display: flex;
+    /*Display flex de uma maneira bem grosseira de se falar serve para deixar elementos um ao lado do outro. Exibe um elemento como container flexível no nível do bloco*/
+    align-items: center;
+    /*alinhas o itens (pelo que eu entendi utilizando a forma de pensar do flex)*/
+    justify-content: space-between;
+    /*alinha os itens flex de acordo com o container o space-between alinha pelo espaço entre os intems*/
+    margin-top: 48px;
+}
+
+#page-home header a {
+    display: flex;
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+#page-home header a span {
+    display: flex;
+    margin-right: 16px;
+    background-image: url('../assets/log-in.svg');
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main {
+    max-width: 560px;
+}
+
+#page-home main h1 {
+    font-size: 54px;
+    color: var(--title-color);
 }
