@@ -1,7 +1,6 @@
 @media screen and (max-width:900px){
     #page-home{
         background-position: 70vw;
-        height: 100vh;
     }
     #page-home .content{
         align-items: center;
@@ -15,5 +14,17 @@
     }
     #page-home main{
         align-items: center;
+    }
+}
+
+@media screen and (min-width:1700px){
+    #page-home{
+        background-position: 40vw;
+    }
+}
+
+@media screen and (max-height:760px){
+    #page-home{
+        background-position: 40vw 10vw;
     }
 }
