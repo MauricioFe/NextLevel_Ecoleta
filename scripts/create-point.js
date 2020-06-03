@@ -21,11 +21,13 @@ function getCities(event) {
     const idUF = event.target.value;
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${idUF}/municipios`
     console.log(url)
+    citySelect.innerHTML = "<option value>Selecione a Cidade</option>"
+    citySelect.disabled = true;
     fetch(url)
         .then(res => res.json())
         .then(bacon => {
             for (city of bacon) {
-                citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+                citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
             }
 
             citySelect.disabled = false;
