@@ -35,3 +35,35 @@ function getCities(event) {
 }
 document.querySelector("select[name=uf]")
     .addEventListener("change", getCities)
+
+//itens de coleta
+const itemsToCollect = document.querySelectorAll(".items-grid li");
+for (const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem);
+}
+
+let selectedItems = []
+const collectedItems = document.querySelector("input[name = items]")
+function handleSelectedItem(event) {
+    const itemLi = event.target;
+    //Adicionar ou remover um classe js
+    itemLi.classList.toggle("selected")//adiciona ou remove o elemento
+    const itemId = itemLi.dataset.id;
+
+    const alredySelected = selectedItems.findIndex(item => {
+        const itemFound = item == itemId
+        return itemFound;
+    })
+
+    if (alredySelected >= 0) {
+        const filteredItens = selectedItems.filter(item => {
+            const itemIsDiferent = item != itemId
+            return itemIsDiferent;
+        })
+
+        selectedItems = filteredItens;
+    } else
+        selectedItems.push(itemId)
+
+   collectedItems.value = selectedItems;
+}

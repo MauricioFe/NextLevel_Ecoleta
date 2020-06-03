@@ -138,3 +138,8 @@ ao elemento*/
 background: #e1faec;
 border: 2px solid #34cb79;
 }
+
+.items-grid li span,
+.items-grid li img{
+    pointer-events: none;
+}
