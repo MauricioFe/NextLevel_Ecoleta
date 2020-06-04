@@ -1,0 +1,26 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauricioFe/NextLevel_Ecoleta.git"
+  },
+  "keywords": [],
+  "author": "Maurício Lacerda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MauricioFe/NextLevel_Ecoleta/issues"
+  },
+  "homepage": "https://github.com/MauricioFe/NextLevel_Ecoleta#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
