@@ -14,31 +14,37 @@
     <div class="content">
         {% include "partials/page-header.html" %}
         <main>
-            <h4>
-                <strong>2 pontos</strong>
-                encontrados
-            </h4>
+            {% if count > 0 %}
+                <h4>
+                    <strong>{{count}}
+                        pontos</strong>
+                    encontrados
+                </h4>
+            {% elseif count== 1%}}
+                <strong>{{count}}
+                    ponto</strong>
+                encontrado
+            {% else %}
+                <strong>Nenhum local</strong>
+                encontrado
+            {% endif %}
 
             <div class="cards">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80" alt="Colectoria">
-                    <h1>Colectoria</h1>
-                    <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-                    <p>
-                        Rio do Sul, Santa Catarina<br/>
-                        Guilherme Gemballa, Jardim América Nº 260
-                    </p>
-                </div>
 
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1567393528677-d6adae7d4a0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Colectoria">
-                    <h1>Papersider</h1>
-                    <h3>Papéis e Papelão</h3>
-                    <p>
-                        Rio do Sul, Santa Catarina<br/>
-                        Guilherme Gemballa, Jardim América Nº 260
-                    </p>
-                </div>
+                {% for place in places %}
+
+                    <div class="card">
+                        <img src="{{place.foto}}" alt="{{place.nome}}">
+                        <h1>{{place.nome}}</h1>
+                        <h3>{{place.items}}</h3>
+                        <p>
+                            {{place.city}},
+                            {{place.state}}<br/>
+                            {{place.address}}
+                            {{place.address2}}
+                        </p>
+                    </div>
+                {% endfor %}
             </div>
         </main>
     </div>

@@ -27,7 +27,18 @@ server.get("/create-point", (req, res) => {
     return res.render("create-point.html")
 })
 server.get("/search", (req, res) => {
-    return res.render("search-results.html")
+
+    db.all(`Select * from places`, function (err, rows) {
+        if (err) {
+            return console.log(err)
+        }
+        console.log("Aqui estão seus registros: ")
+        console.log(rows)
+        const total = rows.length;
+        //mostrar a página html com os dadoss
+    return res.render("search-results.html",{places: rows, count: total})
+    })
+
 })
 
 //liga o servidor
