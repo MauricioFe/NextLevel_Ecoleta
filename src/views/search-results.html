@@ -15,37 +15,40 @@
         {% include "partials/page-header.html" %}
         <main>
             {% if count > 0 %}
-                <h4>
-                    <strong>{{count}}
-                        pontos</strong>
-                    encontrados
-                </h4>
-            {% elseif count== 1%}}
-                <strong>{{count}}
-                    ponto</strong>
-                encontrado
+                {% if count == 1 %}
+                    <h4>
+                        <strong>{{count}}
+                            pontos</strong>
+                        encontrados
+                    </h4>
+                {% else %}
+                    <h4>
+                        <strong>{{count}}
+                            ponto</strong>
+                        encontrado
+                    </h4>
+                {% endif %}
+                <div class="cards">
+
+                    {% for place in places %}
+
+                        <div class="card">
+                            <img src="{{place.foto}}" alt="{{place.nome}}">
+                            <h1>{{place.nome}}</h1>
+                            <h3>{{place.items}}</h3>
+                            <p>
+                                {{place.city}},
+                                {{place.state}}<br/>
+                                {{place.address}}
+                                {{place.address2}}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
             {% else %}
                 <strong>Nenhum local</strong>
                 encontrado
             {% endif %}
-
-            <div class="cards">
-
-                {% for place in places %}
-
-                    <div class="card">
-                        <img src="{{place.foto}}" alt="{{place.nome}}">
-                        <h1>{{place.nome}}</h1>
-                        <h3>{{place.items}}</h3>
-                        <p>
-                            {{place.city}},
-                            {{place.state}}<br/>
-                            {{place.address}}
-                            {{place.address2}}
-                        </p>
-                    </div>
-                {% endfor %}
-            </div>
         </main>
     </div>
 {% endblock content %}
